@@ -14,10 +14,9 @@ Les modèles supportés actuellement sont :
 - le modèle `mk1`, qui n'a accès qu'aux pièces de 1 ;
 - le modèle `mk2`, qui n’a accès qu’aux billets de 10, billets de 5 et pièces de 2.
 
-On souhaite que notre application puisse être étendue facilement pour supporter d'autres modèles futurs.
+On souhaite que notre application puisse être étendue facilement pour supporter d'autres modèles futurs avec des caractéristiques complètement différentes (par exemple, un automate dont le fonctionnement est décrit par une base de données, ou par une API externe...).
 
-Votre objectif: écrire une API qui puisse être interrogée par les automates.
-Le test est calibré pour prendre environ 40 minutes.
+Votre objectif: écrire une API qui puisse être interrogée par les automates pour déterminer la monnaie à rendre.
 
 1. Écrire deux classes `Mk1Calculator` et `Mk2Calculator` qui implémentent `AppBundle\Calculator\CalculatorInterface` 
    pour les modèles d'automates `mk1` et `mk2`.
@@ -29,3 +28,5 @@ Le test est calibré pour prendre environ 40 minutes.
 1. Écrire le controlleur en utilisant le service `CalculatorRegistry`. 
    Le controlleur doit passer le test fonctionnel dans `features/change.feature` (executé avec `vendor/bin/behat`).
    (5 minutes)
+
+Vous pouvez utiliser les actions du fichier `Makefile` pour valider votre solution.
