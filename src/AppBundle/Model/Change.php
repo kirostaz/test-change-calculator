@@ -25,4 +25,15 @@ class Change
      * @var int
      */
     public $coin1 = 0;
+
+    public function addChange($value , $count) {
+        if( $value < 5 ) {
+            $propertyType = 'coin';
+        } else {
+            $propertyType = 'bill';
+        }
+        if ( property_exists($this, $propertyType.$value)) {
+            $this->{$propertyType.$value} += $count;
+        }
+    }
 }
